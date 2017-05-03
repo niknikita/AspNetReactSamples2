@@ -23,41 +23,44 @@ import { Container, Row, Col, Visible, Hidden, ScreenClassRender } from 'react-g
 
 
 class ExampleComponent extends React.Component {
-    static propTypes = {
-        serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    };
+    //static propTypes = {
+    //    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    //};
 
-    static childContextTypes = {
-        serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-        breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
-        containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
-        gutterWidth: React.PropTypes.number,
-    };
+    //static childContextTypes = {
+    //    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    //    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
+    //    containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
+    //    gutterWidth: React.PropTypes.number,
+    //};
 
-        getChildContext = () => ({
-            serverSideScreenClass: this.props.serverSideScreenClass,
-        });
+    //    getChildContext = () => ({
+    //        serverSideScreenClass: this.props.serverSideScreenClass,
+    //    });
 
-        styleFunction = (screenClass) => {
-            if (screenClass === 'xl') return { fontSize: '60px' };
-            if (screenClass === 'lg') return { fontSize: '40px' };
-            if (screenClass === 'md') return { fontSize: '30px' };
-            if (screenClass === 'sm') return { fontSize: '20px' };
-            return { fontSize: '10px' };
-        };
+    //    styleFunction = (screenClass) => {
+    //        if (screenClass === 'xl') return { fontSize: '60px' };
+    //        if (screenClass === 'lg') return { fontSize: '40px' };
+    //        if (screenClass === 'md') return { fontSize: '30px' };
+    //        if (screenClass === 'sm') return { fontSize: '20px' };
+    //        return { fontSize: '10px' };
+    //    };
 
-        render = () => (
-          <Container>
+    render = () => (
+        <div>
+            <h1>Responsive grid example</h1>
+            
+          <Container fluid={true}>
             <h1>Responsive grid example</h1>
 
             <Row>
-              <Col sm={1}>
+              <Col sm={5}>
                 One of three columns1
               </Col>
               <Col sm={5}>
                 One of three columns2
               </Col>
-              <Col sm={3}>
+              <Col sm={6}>
                 One of three columns3
               </Col>
             </Row>
@@ -97,6 +100,7 @@ class ExampleComponent extends React.Component {
             </Row>
 
           </Container>
+          </div>
         );
 }
 

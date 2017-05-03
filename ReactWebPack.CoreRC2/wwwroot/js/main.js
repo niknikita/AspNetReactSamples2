@@ -180,19 +180,9 @@ webpackJsonp([0],{
 	      args[_key] = arguments[_key];
 	    }
 	
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ExampleComponent.__proto__ || Object.getPrototypeOf(ExampleComponent)).call.apply(_ref, [this].concat(args))), _this), _this.getChildContext = function () {
-	      return {
-	        serverSideScreenClass: _this.props.serverSideScreenClass
-	      };
-	    }, _this.styleFunction = function (screenClass) {
-	      if (screenClass === 'xl') return { fontSize: '60px' };
-	      if (screenClass === 'lg') return { fontSize: '40px' };
-	      if (screenClass === 'md') return { fontSize: '30px' };
-	      if (screenClass === 'sm') return { fontSize: '20px' };
-	      return { fontSize: '10px' };
-	    }, _this.render = function () {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ExampleComponent.__proto__ || Object.getPrototypeOf(ExampleComponent)).call.apply(_ref, [this].concat(args))), _this), _this.render = function () {
 	      return _react2.default.createElement(
-	        _reactGridSystem.Container,
+	        'div',
 	        null,
 	        _react2.default.createElement(
 	          'h1',
@@ -200,161 +190,181 @@ webpackJsonp([0],{
 	          'Responsive grid example'
 	        ),
 	        _react2.default.createElement(
-	          _reactGridSystem.Row,
-	          null,
+	          _reactGridSystem.Container,
+	          { fluid: true },
 	          _react2.default.createElement(
-	            _reactGridSystem.Col,
-	            { sm: 1 },
-	            'One of three columns1'
-	          ),
-	          _react2.default.createElement(
-	            _reactGridSystem.Col,
-	            { sm: 5 },
-	            'One of three columns2'
-	          ),
-	          _react2.default.createElement(
-	            _reactGridSystem.Col,
-	            { sm: 3 },
-	            'One of three columns3'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Responsive utilties example'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          _react2.default.createElement(
-	            'span',
+	            'h1',
 	            null,
-	            'Your current screen class is '
+	            'Responsive grid example'
 	          ),
 	          _react2.default.createElement(
-	            _reactGridSystem.Visible,
-	            { xs: true },
+	            _reactGridSystem.Row,
+	            null,
 	            _react2.default.createElement(
-	              'strong',
+	              _reactGridSystem.Col,
+	              { sm: 5 },
+	              'One of three columns1'
+	            ),
+	            _react2.default.createElement(
+	              _reactGridSystem.Col,
+	              { sm: 5 },
+	              'One of three columns2'
+	            ),
+	            _react2.default.createElement(
+	              _reactGridSystem.Col,
+	              { sm: 6 },
+	              'One of three columns3'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Responsive utilties example'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            _react2.default.createElement(
+	              'span',
 	              null,
-	              'xs'
+	              'Your current screen class is '
+	            ),
+	            _react2.default.createElement(
+	              _reactGridSystem.Visible,
+	              { xs: true },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'xs'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactGridSystem.Visible,
+	              { sm: true },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'sm'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactGridSystem.Visible,
+	              { md: true },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'md'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactGridSystem.Visible,
+	              { lg: true },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'lg'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactGridSystem.Visible,
+	              { xl: true },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'xl'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'span',
+	              null,
+	              '.'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactGridSystem.Visible,
-	            { sm: true },
+	            { xs: true, sm: true },
 	            _react2.default.createElement(
-	              'strong',
+	              'p',
 	              null,
-	              'sm'
+	              'Paragraph visible on extra small and small.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactGridSystem.Hidden,
+	            { xs: true, sm: true },
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'Paragraph hidden on extra small and small.'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactGridSystem.Visible,
-	            { md: true },
+	            { md: true, lg: true },
 	            _react2.default.createElement(
-	              'strong',
+	              'p',
 	              null,
-	              'md'
+	              'Paragraph visible on medium and large.'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            _reactGridSystem.Visible,
-	            { lg: true },
+	            _reactGridSystem.Hidden,
+	            { md: true, lg: true },
 	            _react2.default.createElement(
-	              'strong',
+	              'p',
 	              null,
-	              'lg'
+	              'Paragraph hidden on medium and large.'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            _reactGridSystem.Visible,
-	            { xl: true },
+	            _reactGridSystem.ScreenClassRender,
+	            { style: _this.styleFunction },
 	            _react2.default.createElement(
-	              'strong',
+	              'p',
 	              null,
-	              'xl'
+	              'Some text which font size depends on the screen class.'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            'span',
+	            _reactGridSystem.Row,
 	            null,
-	            '.'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactGridSystem.Visible,
-	          { xs: true, sm: true },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Paragraph visible on extra small and small.'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactGridSystem.Hidden,
-	          { xs: true, sm: true },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Paragraph hidden on extra small and small.'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactGridSystem.Visible,
-	          { md: true, lg: true },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Paragraph visible on medium and large.'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactGridSystem.Hidden,
-	          { md: true, lg: true },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Paragraph hidden on medium and large.'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactGridSystem.ScreenClassRender,
-	          { style: _this.styleFunction },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Some text which font size depends on the screen class.'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactGridSystem.Row,
-	          null,
-	          _react2.default.createElement(
-	            _reactGridSystem.Col,
-	            { sm: 2 },
-	            _react2.default.createElement(_AppBar2.default, {
-	              title: 'Title',
-	              iconClassNameRight: 'muidocs-icon-navigation-expand-more' })
+	            _react2.default.createElement(
+	              _reactGridSystem.Col,
+	              { sm: 2 },
+	              _react2.default.createElement(_AppBar2.default, {
+	                title: 'Title',
+	                iconClassNameRight: 'muidocs-icon-navigation-expand-more' })
+	            )
 	          )
 	        )
 	      );
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
+	  //static propTypes = {
+	  //    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+	  //};
+	
+	  //static childContextTypes = {
+	  //    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+	  //    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
+	  //    containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
+	  //    gutterWidth: React.PropTypes.number,
+	  //};
+	
+	  //    getChildContext = () => ({
+	  //        serverSideScreenClass: this.props.serverSideScreenClass,
+	  //    });
+	
+	  //    styleFunction = (screenClass) => {
+	  //        if (screenClass === 'xl') return { fontSize: '60px' };
+	  //        if (screenClass === 'lg') return { fontSize: '40px' };
+	  //        if (screenClass === 'md') return { fontSize: '30px' };
+	  //        if (screenClass === 'sm') return { fontSize: '20px' };
+	  //        return { fontSize: '10px' };
+	  //    };
 	
 	  return ExampleComponent;
 	}(_react2.default.Component);
-	
-	ExampleComponent.propTypes = {
-	  serverSideScreenClass: _react2.default.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl'])
-	};
-	ExampleComponent.childContextTypes = {
-	  serverSideScreenClass: _react2.default.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-	  breakpoints: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number),
-	  containerWidths: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number),
-	  gutterWidth: _react2.default.PropTypes.number
-	};
-	
 	
 	var MyAwesomeReactComponent = function MyAwesomeReactComponent() {
 	  return _react2.default.createElement(
